@@ -1,39 +1,37 @@
 
-def cardCompany():
+def card_Verification():
     while True:
-            try:
-                card_num = int(input('Enter card number: '))
-                check = str(card_num)
-                if len(check) < 13 or len(check) > 16:
-                    continue
-            except:
-                print('INVALID')
+        try:
+            card_num = int(input('Enter your card number: '))
+            card_string = str(card_num)
+            if len(card_string) < 13 or len(card_string) > 16:
                 continue
+        except:
+            print('Invalid input')
+            continue
 
-            even_nos = check[::2]
-            odd_nos = check[1::2]
-            sum_even = [int(x)*2 for x in even_nos]
-            sum_odd = [int(y) for y in odd_nos]
-            lten = [p for p in sum_even if p<10]
-            gten = [i - 9 for i in sum_even if i >= 10]
-            tbh_e = sum(gten) + sum(lten)
-            tbh_o = sum(sum_odd)
-            final = tbh_e + tbh_o
-            if final % 10 == 0:
-                print("Your card is")
-            else:
-                print('Fraud')
-                break
+        even_num = card_string[::2]
+        odd_num = card_string[1::2]
+        elist = [int(x)*2 for x in even_num]
+        olist = [int(y) for y in odd_num]
+        osum = sum(olist)
+        gten = sum([g-9 for g in elist if g >= 10])
+        lten = sum([l for l in elist if l < 10])
+        final_sum = osum + gten + lten
+        if final_sum % 10 == 0:
+            print('Valid Card number')
 
-            first_num = check[0]
-            first_num = int(first_num)
-            if first_num % 3 == 0:
-                print('AMEX')
-            elif first_num % 4 == 0:
-                print('Visa')
-            elif first_num % 5 == 0:
-                print('MasterCard')
-            else: print('Not Valid')
-            break
+        first_num = card_string[0]
+        first_num = int(first_num)
 
-cardCompany()
+        if first_num % 3 == 0:
+            print('American Express')
+        elif first_num % 4 == 0:
+            print('Visa')
+        elif first_num % 5 == 0:
+            print('MasterCard')
+        else:   print('Your Card is valid but its provider is not known.')
+
+        break
+
+card_Verification()
