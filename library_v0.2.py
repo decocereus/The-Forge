@@ -25,20 +25,24 @@ while True:
     else:
         continue
 
+
 def add_and_choose_books():
     books = []
     for b in available_books:
         books.append(b)
-
+    print('Please enter the book name exactly as shown.')
+    print()
     for book in books:
         print(book)
-        print('Do you want this book ? yes or no')
-        answer = input('')
-        answer.lower()
-        if answer[0] == 'y':
-
-            return print('You rented',book,'successfully')
-
-        else:   continue
+        #print()
+    print()
+    answer = input('Pick the book you want: ')
+    answer.lower()
+    if answer in books:
+        print()
+        print('You successfully rented',answer)
+    else:
+        print()
+        print('Please enter a valid book name.')
 
 add_and_choose_books()
