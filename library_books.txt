@@ -1,0 +1,43 @@
+Game of thrones
+Game of thrones: A Clash of Kings
+Game of thrones: A Storm of Swords i. Steel and Snow
+Game of thrones: A Storm of Swords ii. Blood and Gold
+Game of thrones: A Feast for Crows
+Game of thrones: A Dance with Dragons i. Dreams and Dust
+Game of thrones:A Dance with Dragons ii. Dance and Dreams
+Immortals of Meluha
+The Secret of Nagas
+The Oath of Vayuputras
+Scion of Ishkvaku
+Sita a warrior of Mithilla
+Inferno: Dan Brown
+The Da Vinci Code: Dan Brown
+The Lost Symbol: Dan Brown
+Private India
+Krishna’s Key
+Sialkot Saga
+To kill a mockingbird
+Prisoner of Birth
+
+
+
+
+
+books = [
+    choose_book(availabe_books[0],"1"),
+    choose_book(availabe_books[1],"2"),
+    choose_book(availabe_books[2],"3"),
+    choose_book(availabe_books[3],"4"),
+    choose_book(availabe_books[4],"5"),
+    choose_book(availabe_books[5],"6"),
+    choose_book(availabe_books[6],"7"),
+    choose_book(availabe_books[7],"8")
+]
+
+
+
+
+
+user_book = input(book.book_name)
+      if user_book == book.choice:
+          return print("You successfully rented your book")
